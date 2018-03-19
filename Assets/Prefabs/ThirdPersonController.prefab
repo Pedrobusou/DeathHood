@@ -338,11 +338,12 @@ GameObject:
   - component: {fileID: 95088399319878454}
   - component: {fileID: 54850997843033512}
   - component: {fileID: 136526381569617482}
+  - component: {fileID: 81110251455261238}
   - component: {fileID: 114461379735099854}
   - component: {fileID: 114704969953861354}
-  - component: {fileID: 114801191719018566}
   - component: {fileID: 114874930008142660}
-  - component: {fileID: 81758401270374346}
+  - component: {fileID: 114801191719018566}
+  - component: {fileID: 114886473122586432}
   m_Layer: 0
   m_Name: ThirdPersonController
   m_TagString: Untagged
@@ -600,7 +601,6 @@ GameObject:
   - component: {fileID: 4030409471747584}
   - component: {fileID: 20105413688082660}
   - component: {fileID: 124758136335429692}
-  - component: {fileID: 81803053280119966}
   - component: {fileID: 114550775025623476}
   m_Layer: 0
   m_Name: Player Camera
@@ -2539,19 +2539,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!81 &81758401270374346
+--- !u!81 &81110251455261238
 AudioListener:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1335997012475442}
-  m_Enabled: 1
---- !u!81 &81803053280119966
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1489561271981668}
   m_Enabled: 1
 --- !u!95 &95088399319878454
 Animator:
@@ -2659,7 +2652,28 @@ MonoBehaviour:
   - {fileID: 114461379735099854}
   - {fileID: 114704969953861354}
   - {fileID: 20105413688082660}
-  - {fileID: 81758401270374346}
+  - {fileID: 81110251455261238}
+--- !u!114 &114886473122586432
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1335997012475442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 3
+  m_SendInterval: 0.06666667
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 10
+  m_InterpolateMovement: 2
 --- !u!124 &124758136335429692
 Behaviour:
   m_ObjectHideFlags: 1
