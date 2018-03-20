@@ -8,7 +8,6 @@ public class PlayerSetup : NetworkBehaviour {
 	Camera sceneCamera;
 
 	void Start() {
-
 		if (!this.isLocalPlayer) {
 			foreach (Behaviour component in this.componentsToDisable)
 				component.enabled = false;
