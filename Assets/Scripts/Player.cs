@@ -10,7 +10,7 @@ public class Player : MonoBehaviour {
 	[SerializeField] private LayerMask enemiesLayer;
 	[SerializeField] private Collider[] enemies;
 
-	private ThirdPersonUserControl tpuc;
+	//private ThirdPersonUserControl tpuc;
 	private SphereCollider trigger;
 	[SerializeField] private float walkingTriggerRadius = 2;
 	[SerializeField] private float runningTriggerRadius = 4;
@@ -21,7 +21,7 @@ public class Player : MonoBehaviour {
 	/// </summary>
 	private void Start() {
 		audioSource = this.GetComponent<AudioSource>();
-		tpuc = this.GetComponent<ThirdPersonUserControl>();
+		//tpuc = this.GetComponent<ThirdPersonUserControl>();
 
 		trigger = this.GetComponent<SphereCollider>();
 		trigger.radius = walkingTriggerRadius;
@@ -35,8 +35,8 @@ public class Player : MonoBehaviour {
 			reproduceSound();
 		}
 
-		if (tpuc.getIsWalking())trigger.radius = walkingTriggerRadius;
-		else trigger.radius = runningTriggerRadius;
+		//if (tpuc.getIsWalking())trigger.radius = walkingTriggerRadius;
+		//else trigger.radius = runningTriggerRadius;
 	}
 
 	/// <summary>
