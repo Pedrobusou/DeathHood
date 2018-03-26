@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 114376143702003834}
   - component: {fileID: 114749212213477302}
   - component: {fileID: 81729904034833412}
+  - component: {fileID: 114367311339630410}
   m_Layer: 0
   m_Name: vThirdPersonController
   m_TagString: Player
@@ -2734,6 +2735,20 @@ MonoBehaviour:
   currentStateName: 
   currentTarget: {fileID: 0}
   movementSpeed: {x: 0, y: 0}
+--- !u!114 &114367311339630410
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1037292221256962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d487f1929ad451344a94771815959c85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 1888122431962596, guid: 106b91e383337f345a817c8631ac38d3,
+    type: 2}
+  spawnPoint: {fileID: 0}
 --- !u!114 &114376143702003834
 MonoBehaviour:
   m_ObjectHideFlags: 1

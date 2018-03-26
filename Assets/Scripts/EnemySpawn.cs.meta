@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: d487f1929ad451344a94771815959c85
+timeCreated: 1521980608
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - objectToSpawn: {fileID: 1888122431962596, guid: 106b91e383337f345a817c8631ac38d3,
+      type: 2}
+  - spawnPoint: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
