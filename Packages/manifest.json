@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "com.unity.purchasing": "exclude",
+    "com.unity.progrids": "3.0.1-preview",
+    "com.unity.probuilder": "3.0.6"
+  }
+}
