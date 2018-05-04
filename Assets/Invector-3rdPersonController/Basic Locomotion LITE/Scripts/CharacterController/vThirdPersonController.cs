@@ -7,14 +7,14 @@ namespace Invector.CharacterController
     {
         protected virtual void Start()
         {
-#if !UNITY_EDITOR
+            #if !UNITY_EDITOR
                 Cursor.visible = false;
-#endif
+            #endif
         }
 
         public virtual void Sprint(bool value)
-        {                                   
-            isSprinting = value;            
+        {
+            isSprinting = value;
         }
 
         public virtual void Strafe()
@@ -25,13 +25,13 @@ namespace Invector.CharacterController
 
         public virtual void Jump()
         {
-            // conditions to do this action
-            bool jumpConditions = isGrounded && !isJumping;
-            // return if jumpCondigions is false
-            if (!jumpConditions) return;
+            // conditions to not do this action
+            if (!isGrounded && isJumping) return;
+
             // trigger jump behaviour
-            jumpCounter = jumpTimer;            
+            jumpCounter = jumpTimer;
             isJumping = true;
+
             // trigger jump animations            
             if (_rigidbody.velocity.magnitude < 1)
                 animator.CrossFadeInFixedTime("Jump", 0.1f);

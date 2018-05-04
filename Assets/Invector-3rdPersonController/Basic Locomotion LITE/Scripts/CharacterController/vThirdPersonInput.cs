@@ -7,32 +7,17 @@ namespace Invector.CharacterController
 {
     public class vThirdPersonInput : MonoBehaviour
     {
+        private bool isSprinting = false;
         #region variables
 
-        [Header("Default Inputs")]
-        public string horizontalInput = "Horizontal";
-        public string verticallInput = "Vertical";
-        public KeyCode jumpInput = KeyCode.Space;
-        public KeyCode strafeInput = KeyCode.Tab;
-        public KeyCode sprintInput = KeyCode.LeftShift;
-
-        [Header("Camera Settings")]
-        public string rotateCameraXInput ="Mouse X";
-        public string rotateCameraYInput = "Mouse Y";
-
         protected vThirdPersonCamera tpCamera;                // acess camera info        
-        [HideInInspector]
-        public string customCameraState;                    // generic string to change the CameraState        
-        [HideInInspector]
-        public string customlookAtPoint;                    // generic string to change the CameraPoint of the Fixed Point Mode        
-        [HideInInspector]
-        public bool changeCameraState;                      // generic bool to change the CameraState        
-        [HideInInspector]
-        public bool smoothCameraState;                      // generic bool to know if the state will change with or without lerp  
-        [HideInInspector]
-        public bool keepDirection;                          // keep the current direction in case you change the cameraState
+        [HideInInspector] public string customCameraState;    // generic string to change the CameraState        
+        [HideInInspector] public string customlookAtPoint;    // generic string to change the CameraPoint of the Fixed Point Mode        
+        [HideInInspector] public bool changeCameraState;      // generic bool to change the CameraState        
+        [HideInInspector] public bool smoothCameraState;      // generic bool to know if the state will change with or without lerp  
+        [HideInInspector] public bool keepDirection;          // keep the current direction in case you change the cameraState
 
-        protected vThirdPersonController cc;                // access the ThirdPersonController component                
+        protected vThirdPersonController cc;                  // access the ThirdPersonController component                
 
         #endregion
 
@@ -82,7 +67,7 @@ namespace Invector.CharacterController
             {
                 MoveCharacter();
                 SprintInput();
-                StrafeInput();
+                //StrafeInput();
                 JumpInput();
             }
         }
@@ -90,28 +75,37 @@ namespace Invector.CharacterController
         #region Basic Locomotion Inputs      
 
         protected virtual void MoveCharacter()
-        {            
-            cc.input.x = Input.GetAxis(horizontalInput);
-            cc.input.y = Input.GetAxis(verticallInput);
+        {
+            cc.input.x = InputManager.MainHorizontal();
+            cc.input.y = InputManager.MainVertical();
         }
 
-        protected virtual void StrafeInput()
-        {
-            if (Input.GetKeyDown(strafeInput))
-                cc.Strafe();
-        }
+        // protected virtual void StrafeInput()
+        // {
+        //     if (InputManager.R3Button()){
+        //         cc.Strafe();
+        //         isSprinting = false;
+        //     } //Input.GetKeyDown(strafeInput) 
+        // }
 
         protected virtual void SprintInput()
         {
-            if (Input.GetKeyDown(sprintInput))
+            if (Input.GetButtonDown("Sprint") && !isSprinting)
+            {
                 cc.Sprint(true);
-            else if(Input.GetKeyUp(sprintInput))
+                isSprinting = true;
+            }
+
+            else if (Input.GetButtonDown("Sprint") && isSprinting)
+            {
                 cc.Sprint(false);
+                isSprinting = false;
+            }
         }
 
         protected virtual void JumpInput()
         {
-            if (Input.GetKeyDown(jumpInput))
+            if (Input.GetButtonDown("Jump"))
                 cc.Jump();
         }
 
@@ -135,8 +129,8 @@ namespace Invector.CharacterController
         {
             if (tpCamera == null)
                 return;
-            var Y = Input.GetAxis(rotateCameraYInput);
-            var X = Input.GetAxis(rotateCameraXInput);
+            var Y = InputManager.CameraVertical(); //Input.GetAxis(rotateCameraYInput);
+            var X = InputManager.CameraHorizontal(); //Input.GetAxis(rotateCameraXInput);
 
             tpCamera.RotateCamera(X, Y);
 
@@ -144,7 +138,7 @@ namespace Invector.CharacterController
             if (!keepDirection)
                 cc.UpdateTargetDirection(tpCamera != null ? tpCamera.transform : null);
             // rotate the character with the camera while strafing        
-            RotateWithCamera(tpCamera != null ? tpCamera.transform : null);            
+            RotateWithCamera(tpCamera != null ? tpCamera.transform : null);
         }
 
         protected virtual void UpdateCameraStates()
@@ -160,14 +154,14 @@ namespace Invector.CharacterController
                     tpCamera.SetMainTarget(this.transform);
                     tpCamera.Init();
                 }
-            }            
+            }
         }
 
         protected virtual void RotateWithCamera(Transform cameraTransform)
         {
             if (cc.isStrafing && !cc.lockMovement && !cc.lockMovement)
-            {                
-                cc.RotateWithAnotherTransform(cameraTransform);                
+            {
+                cc.RotateWithAnotherTransform(cameraTransform);
             }
         }
 
