@@ -56,7 +56,7 @@ public static class InputManager
     public static float LTTrigger()
     {
         float r = 0.0f;
-        r += Input.GetAxis("LT_Button");
+        r += Input.GetAxis("LT");
         r += Input.GetAxis("LeftClick");
         return Mathf.Clamp(r, -1.0f, 1.0f);
     }
@@ -64,7 +64,7 @@ public static class InputManager
     public static float RTTrigger()
     {
         float r = 0.0f;
-        r += Input.GetAxis("RT_Button");
+        r += Input.GetAxis("RT");
         r += Input.GetAxis("RightClick");
         return Mathf.Clamp(r, -1.0f, 1.0f);
     }
