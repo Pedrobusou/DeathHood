@@ -20,7 +20,7 @@ public class EnemySpawn : NetworkBehaviour {
 
     // Update is called once per frame
     private void Update() {
-        if (!isLocalPlayer) { return; }
+        //if (!isLocalPlayer) { return; }
         spawnEnemy();
     }
 

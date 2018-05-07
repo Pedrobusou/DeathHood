@@ -42,8 +42,8 @@ public class EnemyAi : MonoBehaviour {
 	/// </summary>
 	private void seekTarget() {
 		if (target)
-			if (Vector3.Distance(this.transform.position, target.position)< viewDistance)
-				if (Vector3.Angle(Vector3.forward, this.transform.InverseTransformPoint(target.position))< viewField)
+			if (Vector3.Distance(this.transform.position, target.position) < viewDistance)
+				if (Vector3.Angle(Vector3.forward, this.transform.InverseTransformPoint(target.position)) < viewField)
 					lockTarget();
 	}
 
@@ -70,7 +70,7 @@ public class EnemyAi : MonoBehaviour {
 	private Transform getClosestPlayer() {
 		players = GameObject.FindGameObjectsWithTag("Player");
 
-		if (players.Length == 0)return null;
+		if (players.Length == 0) return null;
 		else return players.OrderBy(player => Vector2.Distance(this.transform.position, player.transform.position)).ToArray().First().transform;
 	}
 }
