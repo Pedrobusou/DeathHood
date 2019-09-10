@@ -3,4 +3,4 @@ languages:
 - csharp
 
 exclude:
-- ^((?!\/Assets\/Scripts).)*$
+- ^((?!^\/Assets\/Scripts).)*$
