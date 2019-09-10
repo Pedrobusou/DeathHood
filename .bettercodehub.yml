@@ -6,3 +6,13 @@ exclude:
 - /.vscode/.*
 - /Packages/.*
 - /ProjectSettings/.*
+
+- /Characters/.*
+- /Invector-3rdPersonController/.*
+- /Materials/.*
+- /PostProcessing/.*
+- /Prefabs/.*
+- /ProBuilder Data/.*
+- /Scenes/.*
+- /Sound/.*
+- /Standard Assets/.*
