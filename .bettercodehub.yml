@@ -2,17 +2,5 @@ component_depth: 1
 languages:
 - csharp
 
-exclude:
-- /.vscode/.*
-- /Packages/.*
-- /ProjectSettings/.*
-
-- /Assets/Characters/.*
-- /Assets/Invector-3rdPersonController/.*
-- /Assets/Materials/.*
-- /Assets/PostProcessing/.*
-- /Assets/Prefabs/.*
-- /Assets/ProBuilder Data/.*
-- /Assets/Scenes/.*
-- /Assets/Sound/.*
-- /Assets/Standard Assets/.*
+include:
+- /Assets/Scripts/.*
