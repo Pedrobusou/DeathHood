@@ -7,12 +7,12 @@ exclude:
 - /Packages/.*
 - /ProjectSettings/.*
 
-- /Scripts/Characters/.*
-- /Scripts/Invector-3rdPersonController/.*
-- /Scripts/Materials/.*
-- /Scripts/PostProcessing/.*
-- /Scripts/Prefabs/.*
-- /Scripts/ProBuilder Data/.*
-- /Scripts/Scenes/.*
-- /Scripts/Sound/.*
-- /Scripts/Standard Assets/.*
+- /Assets/Characters/.*
+- /Assets/Invector-3rdPersonController/.*
+- /Assets/Materials/.*
+- /Assets/PostProcessing/.*
+- /Assets/Prefabs/.*
+- /Assets/ProBuilder Data/.*
+- /Assets/Scenes/.*
+- /Assets/Sound/.*
+- /Assets/Standard Assets/.*
